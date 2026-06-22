@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KnoW — The All-in-One AI Platform</title>
+  <meta name="description" content="KnoW — five AI tools, one platform. Write, Code, Study, Plan, and everything in between. Free. No sign-up required.">
+  <link rel="stylesheet" href="style.css">
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/12.15.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.15.0/firebase-auth-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyC4sVc6U-JkCpRXvAXnATwjXPW1QVF0i9o",
+      authDomain: "know-48f47.firebaseapp.com",
+      projectId: "know-48f47",
+      storageBucket: "know-48f47.firebasestorage.app",
+      messagingSenderId: "469730284840",
+      appId: "1:469730284840:web:68ae2c3fc5accc2a726c1d",
+      measurementId: "G-YZ1T42MP2C"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">KnoW</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="write.html" class="nav-link">Write</a>
+      <a href="code.html" class="nav-link">Code</a>
+      <a href="study.html" class="nav-link">Study</a>
+      <a href="plan.html" class="nav-link">Plan</a>
+      <a href="allrounder.html" class="nav-link">All Rounder</a>
+    </div>
+    <div class="nav-right" id="navAuth"></div>
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="write.html">Write</a>
+    <a href="code.html">Code</a>
+    <a href="study.html">Study</a>
+    <a href="plan.html">Plan</a>
+    <a href="allrounder.html">All Rounder</a>
+  </div>
+
+  <!-- SECTION 1 — HERO -->
+  <section class="hero">
+    <div class="eyebrow">THE ALL-IN-ONE AI PLATFORM</div>
+    <h1 class="hero-title">KnoW<span class="dot">.</span></h1>
+    <p class="hero-sub">Write. Code. Study. Plan. And everything in between.<br>One platform. Zero cost. Open and use.</p>
+    <div class="hero-buttons">
+      <a href="allrounder.html" class="hero-btn-primary">Start for Free</a>
+      <a href="#tool-strips" class="hero-btn-secondary">See All Tools</a>
+    </div>
+  </section>
+
+  <!-- SECTION 2 — TOOL STRIPS -->
+  <section class="tool-strips" id="tool-strips">
+    <a href="write.html" class="tool-strip">
+      <div class="strip-left">
+        <span class="strip-num">01</span>
+        <span class="strip-name">Write</span>
+      </div>
+      <div class="strip-right">
+        <span class="strip-desc">Emails, blogs, essays &amp; written content.</span>
+        <span class="strip-arrow">&rarr;</span>
+      </div>
+    </a>
+
+    <a href="code.html" class="tool-strip">
+      <div class="strip-left">
+        <span class="strip-num">02</span>
+        <span class="strip-name">Code</span>
+      </div>
+      <div class="strip-right">
+        <span class="strip-desc">Build, debug &amp; explain code in any language.</span>
+        <span class="strip-arrow">&rarr;</span>
+      </div>
+    </a>
+
+    <a href="study.html" class="tool-strip">
+      <div class="strip-left">
+        <span class="strip-num">03</span>
+        <span class="strip-name">Study</span>
+      </div>
+      <div class="strip-right">
+        <span class="strip-desc">Learn concepts, get explanations &amp; practice.</span>
+        <span class="strip-arrow">&rarr;</span>
+      </div>
+    </a>
+
+    <a href="plan.html" class="tool-strip">
+      <div class="strip-left">
+        <span class="strip-num">04</span>
+        <span class="strip-name">Plan</span>
+      </div>
+      <div class="strip-right">
+        <span class="strip-desc">Strategy, roadmaps, ideas &amp; business thinking.</span>
+        <span class="strip-arrow">&rarr;</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- SECTION 3 — USE CASES -->
+  <section class="use-cases">
+    <div class="use-cases-title-area">
+      <div class="use-cases-label">WHAT PEOPLE USE IT FOR</div>
+      <h2 class="use-cases-heading">Real tasks. Real results.</h2>
+    </div>
+    <div class="use-cases-grid">
+      <div class="use-case-card">
+        <div class="use-case-tag">WRITE</div>
+        <div class="use-case-title">Cold email that actually gets replies</div>
+        <div class="use-case-desc">Brief the AI on who you're emailing and why. Get a ready-to-send email in seconds.</div>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-tag">CODE</div>
+        <div class="use-case-title">Debug your code without Stack Overflow</div>
+        <div class="use-case-desc">Paste the broken code. Get the fix with a clear explanation of what went wrong.</div>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-tag">STUDY</div>
+        <div class="use-case-title">Understand anything before your exam</div>
+        <div class="use-case-desc">Explain a topic, get quizzed, test yourself. Adapt from beginner to advanced instantly.</div>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-tag">PLAN</div>
+        <div class="use-case-title">Business plan in under 10 minutes</div>
+        <div class="use-case-desc">Describe your idea. Get a structured plan with market, strategy, and execution steps.</div>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-tag">ALL ROUNDER</div>
+        <div class="use-case-title">Today's weather, news, and exchange rate</div>
+        <div class="use-case-desc">Ask anything real-time. Live data from weather, news, and finance APIs instantly.</div>
+      </div>
+      <div class="use-case-card">
+        <div class="use-case-tag">ALL ROUNDER</div>
+        <div class="use-case-title">Anything else you can think of</div>
+        <div class="use-case-desc">Definitions, country facts, space data, book info, quotes. One tool, all answers.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 — SOCIAL PROOF / QUOTES -->
+  <section class="social-proof">
+    <div class="social-proof-label">WHAT USERS SAY</div>
+    <div class="quotes-grid">
+      <div class="quote-card">
+        <span class="quote-mark">&ldquo;</span>
+        <div class="quote-text">KnoW replaced three different AI tools I was paying for. Now I just open one tab.</div>
+        <div class="quote-attribution">
+          <div class="quote-name">Aryan S.</div>
+          <div class="quote-role">Computer Science Student</div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <span class="quote-mark">&ldquo;</span>
+        <div class="quote-text">I used the Study tool to prepare for my boards. Got explanations no textbook could give.</div>
+        <div class="quote-attribution">
+          <div class="quote-name">Priya M.</div>
+          <div class="quote-role">Class 12 Student</div>
+        </div>
+      </div>
+      <div class="quote-card">
+        <span class="quote-mark">&ldquo;</span>
+        <div class="quote-text">Built an entire project proposal using Write and Plan together. Client approved it same day.</div>
+        <div class="quote-attribution">
+          <div class="quote-name">Rohan K.</div>
+          <div class="quote-role">Freelance Developer</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5 — STAT STRIP -->
+  <section class="stat-strip">
+    <div class="stat-block">
+      <div class="stat-num">5</div>
+      <div class="stat-label">AI Tools</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">0</div>
+      <div class="stat-label">Barriers to Entry</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">Free</div>
+      <div class="stat-label">Forever</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">10+</div>
+      <div class="stat-label">Free APIs Inside</div>
+    </div>
+  </section>
+
+  <!-- SECTION 6 — CTA -->
+  <section class="cta-section">
+    <h2 class="cta-heading">Start using KnoW.</h2>
+    <p class="cta-sub">Free. No sign-up required. Open and use.</p>
+    <a href="allrounder.html" class="cta-btn">Open KnoW All &rarr;</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">KnoW</div>
+    <div class="footer-center">
+      <a href="write.html">Write</a> &middot; <a href="code.html">Code</a> &middot; <a href="study.html">Study</a> &middot; <a href="plan.html">Plan</a> &middot; <a href="allrounder.html">All Rounder</a>
+    </div>
+    <div class="footer-right">&copy; 2026 KnoW</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
