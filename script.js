@@ -67,7 +67,6 @@ function initFirebaseAuth() {
         firebase.auth().signOut();
       });
     } else {
-    } else {
 
   // Allow auth page itself
   if (!window.location.pathname.includes('auth.html')) {
