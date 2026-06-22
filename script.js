@@ -67,16 +67,21 @@ function initFirebaseAuth() {
         firebase.auth().signOut();
       });
     } else {
-      // User is signed out
-      authContainer.innerHTML =
-        '<a class="nav-signin" id="signInBtn">Sign In</a>';
+    } else {
 
-      document.getElementById('signInBtn').addEventListener('click', function () {
-        window.location.href = 'auth.html';
-      });
-    }
+  // Allow auth page itself
+  if (!window.location.pathname.includes('auth.html')) {
+    window.location.href = 'auth.html';
+    return;
+  }
+
+  authContainer.innerHTML =
+    '<a class="nav-signin" id="signInBtn">Sign In</a>';
+
+  document.getElementById('signInBtn').addEventListener('click', function () {
+    window.location.href = 'auth.html';
   });
-}
+    }
 
 function escapeHtml(text) {
   var div = document.createElement('div');
