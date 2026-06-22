@@ -52,7 +52,7 @@ function initFirebaseAuth() {
 
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-      // User is signed in
+
       const displayName = user.displayName || user.email || 'User';
       const initial = displayName.charAt(0).toUpperCase();
 
@@ -66,21 +66,24 @@ function initFirebaseAuth() {
       document.getElementById('signOutBtn').addEventListener('click', function () {
         firebase.auth().signOut();
       });
+
     } else {
 
-  // Allow auth page itself
-  if (!window.location.pathname.includes('auth.html')) {
-    window.location.href = 'auth.html';
-    return;
-  }
+      if (!window.location.pathname.includes('auth.html')) {
+        window.location.href = 'auth.html';
+        return;
+      }
 
-  authContainer.innerHTML =
-    '<a class="nav-signin" id="signInBtn">Sign In</a>';
+      authContainer.innerHTML =
+        '<a class="nav-signin" id="signInBtn">Sign In</a>';
 
-  document.getElementById('signInBtn').addEventListener('click', function () {
-    window.location.href = 'auth.html';
-  });
+      document.getElementById('signInBtn').addEventListener('click', function () {
+        window.location.href = 'auth.html';
+      });
     }
+
+  });   // <-- ADD THIS
+}       // <-- ADD THIS
 
 function escapeHtml(text) {
   var div = document.createElement('div');
