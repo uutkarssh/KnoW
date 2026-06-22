@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KnoW — Code</title>
+  <meta name="description" content="KnoW Code — build anything, debug everything. Code in any language.">
+  <script src="https://js.puter.com/v2/"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="chat-body">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">KnoW</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="write.html" class="nav-link">Write</a>
+      <a href="code.html" class="nav-link active">Code</a>
+      <a href="study.html" class="nav-link">Study</a>
+      <a href="plan.html" class="nav-link">Plan</a>
+    </div>
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" aria-label="Close menu">×</button>
+    <a href="index.html">Home</a>
+    <a href="write.html">Write</a>
+    <a href="code.html">Code</a>
+    <a href="study.html">Study</a>
+    <a href="plan.html">Plan</a>
+  </div>
+
+  <!-- CHAT PAGE -->
+  <div class="chat-page">
+
+    <!-- CHAT HEADER -->
+    <div class="chat-header">
+      <div class="tool-label">CODE</div>
+      <button class="clear-btn" id="clearBtn">Clear Chat</button>
+    </div>
+
+    <!-- CHAT MESSAGES -->
+    <div class="chat-messages" id="chatMessages">
+      <div class="empty-state" id="emptyState">
+        <h1 class="empty-title">Code<span class="dot">.</span></h1>
+        <p class="empty-subtitle">Build anything. Debug everything.</p>
+        <div class="quick-prompts" id="quickPrompts"></div>
+      </div>
+    </div>
+
+    <!-- CHAT INPUT -->
+    <div class="chat-input">
+      <textarea id="messageInput" placeholder="Ask anything..." rows="1"></textarea>
+      <button class="send-btn" id="sendBtn">Send</button>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">KnoW</div>
+    <div class="footer-center">
+      <a href="write.html">Write</a> · <a href="code.html">Code</a> · <a href="study.html">Study</a> · <a href="plan.html">Plan</a>
+    </div>
+    <div class="footer-right">© 2026 KnoW</div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      initChat({
+        toolLabel: 'CODE',
+        emptyTitle: 'Code.',
+        emptySubtitle: 'Build anything. Debug everything.',
+        systemPrompt:
+          "You are an expert software engineer inside KnoW. " +
+          "Help users write clean code, debug errors, explain " +
+          "programming concepts, and build real projects. " +
+          "Always use code blocks. Ask for language if unclear. " +
+          "Be precise and technical.",
+        quickPrompts: [
+          'Build a login form in HTML',
+          'Debug my Python code',
+          'Explain async/await',
+          'Create a Node.js REST API'
+        ]
+      });
+    });
+  </script>
+</body>
+</html>

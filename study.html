@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KnoW — Study</title>
+  <meta name="description" content="KnoW Study — learn faster, understand deeper. Concepts, quizzes, any subject.">
+  <script src="https://js.puter.com/v2/"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="chat-body">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">KnoW</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="write.html" class="nav-link">Write</a>
+      <a href="code.html" class="nav-link">Code</a>
+      <a href="study.html" class="nav-link active">Study</a>
+      <a href="plan.html" class="nav-link">Plan</a>
+    </div>
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" aria-label="Close menu">×</button>
+    <a href="index.html">Home</a>
+    <a href="write.html">Write</a>
+    <a href="code.html">Code</a>
+    <a href="study.html">Study</a>
+    <a href="plan.html">Plan</a>
+  </div>
+
+  <!-- CHAT PAGE -->
+  <div class="chat-page">
+
+    <!-- CHAT HEADER -->
+    <div class="chat-header">
+      <div class="tool-label">STUDY</div>
+      <button class="clear-btn" id="clearBtn">Clear Chat</button>
+    </div>
+
+    <!-- CHAT MESSAGES -->
+    <div class="chat-messages" id="chatMessages">
+      <div class="empty-state" id="emptyState">
+        <h1 class="empty-title">Study<span class="dot">.</span></h1>
+        <p class="empty-subtitle">Learn faster. Understand deeper.</p>
+        <div class="quick-prompts" id="quickPrompts"></div>
+      </div>
+    </div>
+
+    <!-- CHAT INPUT -->
+    <div class="chat-input">
+      <textarea id="messageInput" placeholder="Ask anything..." rows="1"></textarea>
+      <button class="send-btn" id="sendBtn">Send</button>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">KnoW</div>
+    <div class="footer-center">
+      <a href="write.html">Write</a> · <a href="code.html">Code</a> · <a href="study.html">Study</a> · <a href="plan.html">Plan</a>
+    </div>
+    <div class="footer-right">© 2026 KnoW</div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      initChat({
+        toolLabel: 'STUDY',
+        emptyTitle: 'Study.',
+        emptySubtitle: 'Learn faster. Understand deeper.',
+        systemPrompt:
+          "You are a sharp, knowledgeable tutor inside KnoW. " +
+          "Explain concepts clearly at the user's level, create " +
+          "quizzes, answer questions about any subject. " +
+          "Use examples and analogies. Adapt to beginner " +
+          "or advanced level automatically.",
+        quickPrompts: [
+          'Explain photosynthesis simply',
+          'Quiz me on World War II',
+          'How does compound interest work?',
+          'Teach me basic French'
+        ]
+      });
+    });
+  </script>
+</body>
+</html>
