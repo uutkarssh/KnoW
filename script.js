@@ -9,9 +9,9 @@
    API KEYS (for All Rounder)
    ----------------------------------------- */
 const KNOW_KEYS = {
-  weather: 'OPENWEATHERMAP_KEY_HERE',
-  news: 'GNEWS_KEY_HERE',
-  nasa: 'NASA_KEY_HERE'
+  weather: 'WEATHER_API_KEY',
+  news: 'b3614da618ae68b00d7143bd3852a2a9',
+  nasa: 'PuDhOcSwKfRev7EI1Ua4kwunuPpTebdO4Nxk4fiw'
 };
 
 /* -----------------------------------------
