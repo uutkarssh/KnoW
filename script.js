@@ -499,34 +499,42 @@ async function fetchWeather(message) {
       break;
     }
   }
-  var url = 'https://api.openweathermap.org/data/2.5/weather?q=' +
-    encodeURIComponent(city) + '&appid=' + KNOW_KEYS.weather + '&units=metric';
+  var url = 'https://wttr.in/' + encodeURIComponent(city) + '?format=j1';
   var res = await fetch(url);
+  if (!res.ok) return null;
   var data = await res.json();
-  if (data.cod !== 200) return null;
+  var current = data.current_condition[0];
+  var area = data.nearest_area[0];
   return {
-    city: data.name,
-    country: data.sys.country,
-    temp: Math.round(data.main.temp),
-    feels: Math.round(data.main.feels_like),
-    condition: data.weather[0].description,
-    humidity: data.main.humidity,
-    wind: data.wind.speed
+    city: area.areaName[0].value,
+    country: area.country[0].value,
+    temp: parseInt(current.temp_C),
+    feels: parseInt(current.FeelsLikeC),
+    condition: current.weatherDesc[0].value,
+    humidity: current.humidity,
+    wind: current.windspeedKmph + ' km/h'
   };
 }
-
 async function fetchNews(message) {
   var stopwords = ['news', 'latest', 'today', 'about',
-    'headlines', 'show', 'get', 'give', 'tell', 'me', 'the'];
+    'headlines', 'show', 'get', 'give', 'tell', 'me', 'the', 'current', 'recent'];
   var words = message.toLowerCase()
     .replace(/[^a-z\s]/g, '').split(' ')
     .filter(function (w) { return w && stopwords.indexOf(w) === -1; });
   var query = words.join(' ') || 'technology';
-  var url = 'https://gnews.io/api/v4/search?q=' +
-    encodeURIComponent(query) + '&lang=en&max=4&apikey=' + KNOW_KEYS.news;
+  var rssUrl = 'https://news.google.com/rss/search?q=' + encodeURIComponent(query) + '&hl=en-IN&gl=IN&ceid=IN:en';
+  var url = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssUrl) + '&count=4';
   var res = await fetch(url);
   var data = await res.json();
-  return data.articles || [];
+  if (!data.items || !data.items.length) return [];
+  return data.items.map(function(item) {
+    return {
+      title: item.title,
+      source: { name: item.author || 'Google News' },
+      publishedAt: item.pubDate,
+      url: item.link
+    };
+  });
 }
 
 async function fetchNASA() {
